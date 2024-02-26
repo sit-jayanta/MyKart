@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profile"
+            type="com.example.mykart.database.UserDetails" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_loginlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_"
+        tools:context=".fragments.ProfileFragment"
+        tools:ignore="RtlSymmetry">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                app:cardBackgroundColor="@color/lightGrey2"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="20dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_userimage"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp"
+                        tools:visibility="visible">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/profileImage"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="20dp"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/user"
+                            app:shapeAppearance="@style/CornerCut" />
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_email"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.6"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="20dp"
+                            android:text="@string/str_username"
+                            android:textAlignment="textStart"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <EditText
+                            android:id="@+id/edtUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/edittextcustom"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@{profile.username}"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_address"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.6"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="20dp"
+                            android:text="Phone number"
+                            android:textAlignment="textStart"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <EditText
+                            android:id="@+id/edtPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/edittextcustom"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:paddingVertical="10dp"
+                            android:paddingStart="20dp"
+                            android:text="@{String.valueOf(profile.phone)}"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif"
+                            tools:ignore="TextFields" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rl_userimage"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.6"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="20dp"
+                            android:text="Email"
+                            android:textAlignment="textStart"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <EditText
+                            android:id="@+id/edtEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/edittextcustom"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:maxLength="25"
+                            android:maxLines="1"
+                            android:paddingVertical="10dp"
+                            android:paddingStart="20dp"
+                            android:text="@{profile.email}"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_pwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_userName"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtpwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.6"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="20dp"
+                            android:text="Password"
+                            android:textAlignment="textStart"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <EditText
+                            android:id="@+id/edtpwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/edittextcustom"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:paddingVertical="10dp"
+                            android:paddingStart="20dp"
+                            android:password="true"
+                            android:text="@{profile.password}"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_firstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_pwd"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtfirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.6"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="20dp"
+                            android:text="First Name"
+                            android:textAlignment="textStart"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <EditText
+                            android:id="@+id/edtfirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/edittextcustom"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="10dp"
+                            android:paddingStart="20dp"
+                            android:text="@{profile.name.firstname}"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_lastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_firstName"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.6"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="20dp"
+                            android:text="Last Name"
+                            android:textAlignment="textStart"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <EditText
+                            android:id="@+id/edtLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_weight="0.4"
+                            android:background="@drawable/edittextcustom"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="10dp"
+                            android:text="@{profile.name.lastname}"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/ll_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_lastName"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:id="@+id/txtAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
+                            android:paddingVertical="5dp"
+                            android:paddingStart="20dp"
+                            android:text="Address"
+                            android:textAlignment="textStart"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <LinearLayout
+                            android:id="@+id/cityStreet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtAddress"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/city"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <EditText
+                                    android:id="@+id/edtCity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_weight="0.4"
+                                    android:background="@drawable/edittextcustom"
+                                    android:focusable="false"
+                                    android:imeOptions="actionNext"
+                                    android:maxLength="20"
+                                    android:maxLines="1"
+                                    android:paddingVertical="10dp"
+
+                                    android:paddingStart="20dp"
+                                    android:text="@{profile.address.city}"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:typeface="serif" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/street"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <EditText
+                                    android:id="@+id/edtStreet"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.4"
+                                    android:background="@drawable/edittextcustom"
+                                    android:focusable="false"
+                                    android:imeOptions="actionNext"
+                                    android:maxLength="20"
+                                    android:maxLines="1"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="10dp"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@{profile.address.street}"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:typeface="serif" />
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/numberZipcode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cityStreet"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <EditText
+                                    android:id="@+id/edtnumber"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/edittextcustom"
+                                    android:focusable="false"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:maxLength="20"
+                                    android:maxLines="1"
+                                    android:paddingVertical="10dp"
+                                    android:paddingStart="20dp"
+                                    android:text="@{String.valueOf(profile.address.number)}"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:typeface="serif" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/zipcode"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <EditText
+                                    android:id="@+id/edtZipcode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/edittextcustom"
+                                    android:focusable="false"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="number"
+                                    android:maxLength="10"
+                                    android:maxLines="1"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="10dp"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@{String.valueOf(profile.address.zipcode)}"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:typeface="serif" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/latlong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/numberZipcode"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/latitude"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <EditText
+                                    android:id="@+id/edtlatitude"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/edittextcustom"
+                                    android:focusable="false"
+                                    android:imeOptions="actionNext"
+                                    android:maxLength="20"
+                                    android:maxLines="1"
+                                    android:paddingVertical="10dp"
+                                    android:paddingStart="20dp"
+                                    android:text="@{String.valueOf(profile.address.geolocation.lat)}"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:typeface="serif" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/longitude"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <EditText
+                                    android:id="@+id/edtlongitude"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/edittextcustom"
+                                    android:focusable="false"
+                                    android:imeOptions="actionNext"
+                                    android:maxLength="20"
+                                    android:paddingHorizontal="10dp"
+                                    android:paddingVertical="10dp"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="20dp"
+                                    android:text="@{String.valueOf(profile.address.geolocation.lat)}"
+                                    android:textColor="@color/black"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    android:typeface="serif" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

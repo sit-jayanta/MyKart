@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="address"
+            type="com.example.mykart.database.MultiAddress" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/chkAdsress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:paddingStart="10dp"
+            android:textColor="@color/darkGrey"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/chkAdsress"
+            android:layout_marginEnd="10dp"
+            android:layout_marginVertical="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@{address.recieverName}"
+                android:textSize="18sp"
+                android:textColor="@color/darkpink"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:layout_marginHorizontal="20dp" />
+            <TextView
+                android:id="@+id/txtFeilds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@{address.address}"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="25dp" />
+
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

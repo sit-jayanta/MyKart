@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UseCompatTextViewDrawableXml"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_"
+    tools:context=".fragments.PaymentFragment">
+
+   <androidx.cardview.widget.CardView
+       android:id="@+id/card"
+       android:layout_marginHorizontal="10dp"
+       android:layout_marginTop="20dp"
+       app:cardElevation="10dp"
+       app:cardCornerRadius="10dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+
+           <LinearLayout
+               android:layout_marginTop="10dp"
+               android:id="@+id/items"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="10dp">
+
+               <TextView
+                   android:id="@+id/txtItems"
+                   android:textSize="18sp"
+                   android:layout_weight="0.5"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="@string/items" />
+
+               <TextView
+                   android:id="@+id/tv_itemAmount"
+                   android:layout_weight="0.5"
+                   android:textSize="18sp"
+                   android:gravity="end"
+                   android:paddingHorizontal="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                    />
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/ll_delivery"
+               android:layout_marginHorizontal="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/items">
+
+               <TextView
+                   android:id="@+id/txtdelivery"
+                   android:textSize="18sp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="0.5"
+                   android:text="@string/delivery" />
+
+               <TextView
+                   android:id="@+id/tv_deliverytotal"
+                   android:layout_width="match_parent"
+                   android:paddingHorizontal="10dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="18sp"
+                   android:gravity="end"
+                   android:layout_weight="0.5"
+                   android:text="@string/_20" />
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/ll_total"
+
+               android:layout_marginHorizontal="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/ll_delivery">
+
+               <TextView
+                   android:id="@+id/txtTotal"
+                   android:layout_weight="0.5"
+                   android:textSize="18sp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="@string/taxes" />
+
+               <TextView
+                   android:id="@+id/tv_taxesamt"
+                   android:layout_weight="0.5"
+                   android:gravity="end"
+                   android:textSize="18sp"
+                   android:paddingHorizontal="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                    />
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/ll_order"
+               android:layout_marginHorizontal="10dp"
+               android:paddingVertical="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@id/ll_total">
+
+               <TextView
+                   android:id="@+id/txtOrderTotl"
+                   android:layout_weight="0.5"
+                   android:textSize="25sp"
+                   android:textColor="@color/darkpink"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="@string/order_total" />
+
+               <TextView
+                   android:id="@+id/tv_ordertotal"
+                   android:layout_weight="0.5"
+                   android:textSize="25sp"
+                   android:paddingHorizontal="10dp"
+                   android:gravity="end"
+                   android:textColor="@color/darkpink"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                    />
+
+           </LinearLayout>
+
+       </RelativeLayout>
+   </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtAddress"
+        android:layout_below="@id/card"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:textColor="@color/darkpink"
+        android:textStyle="bold"
+        android:text="@string/select_address"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ScrollView
+        android:layout_below="@+id/txtAddress"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rl_listAddress"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+   <androidx.cardview.widget.CardView
+       android:layout_below="@+id/rl_listAddress"
+       android:layout_marginTop="10dp"
+       app:cardElevation="10dp"
+       app:cardCornerRadius="10dp"
+       android:layout_marginBottom="10dp"
+       android:layout_centerHorizontal="true"
+       android:id="@+id/addnewAddress"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+
+       <TextView
+           android:id="@+id/tv_newAddress"
+           android:layout_below="@id/card"
+           android:layout_marginHorizontal="15dp"
+           android:textColor="@color/darkpink"
+           android:paddingVertical="10dp"
+           android:drawableStart="@drawable/baseline_add_24"
+           android:text="@string/add_new_address"
+           android:textSize="20sp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+            />
+
+   </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnPayment"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/darkpink"
+        android:text="@string/proceed_to_pay"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
+
+</layout>
